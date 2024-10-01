@@ -11,7 +11,7 @@ fn celsius_to_fahrenheit(c: f64) -> f64{
 }
 
 fn main() {
-    let mut x = 104.0;
+    let mut x = 32.0;
     println!("{}", fahrenheit_to_celsius(x));
 
     let mut counter = 0;
