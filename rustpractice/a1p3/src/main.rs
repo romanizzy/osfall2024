@@ -1,16 +1,38 @@
 fn check_guess(guess: i32, secret: i32) -> i32{
-    //returns:
-    //0, if guess is correct
-    //1, if the guess is too high
-    //-1 if the guess is too low
+    if guess < secret {
+        return -1;
+    }
+    else if secret < guess {
+        return 1;
+    }
+    else{
+        return 0;
+    }
 }
 
 fn main() {
-    //Use a mutable variable to store a "secret" number in or out of the main
-    //use a loop to:
-        //Set a mutable guess variable to a number of your choice (simulating user input)
-        //call the check_guess function
-        //use an if-else expression to print whether the guess was correct, too high or too low
-        //if the guess was correct, break the loop
-    //after the loop ends, print how many guesses it took
+    let mut secret = 68;
+    let mut num_of_guesses = 0;
+    let mut guess = 50;
+    let mut right_guess = false;
+    let mut guess_output = 0;
+
+    while right_guess == false{
+        guess_output = check_guess(guess, secret);
+        if guess_output == 1{
+            println!("The guess: {} is too high!", guess);
+            guess -= 1;
+            num_of_guesses += 1;
+        }
+        else if guess_output == 0{
+            println!("{} is the correct guess!", guess);
+            println!("You found it in {} guesses.", num_of_guesses);
+            right_guess = true;
+        }
+        else{
+            println!("The guess: {} is too low", guess);
+            guess += 1;
+            num_of_guesses += 1;
+        }
+    }
 }
