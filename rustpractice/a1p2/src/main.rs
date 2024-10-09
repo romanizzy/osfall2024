@@ -1,12 +1,11 @@
 fn is_even(n: i32) -> bool{
-    if (n%2)==0{
+    if (n%2)==0 {
         return true;
     }
     else{
         return false;
     }
 }
-
 fn main() {
     let numbers: [i32; 10] = [10, 15, 21, 25, 30, 40, 66, 75, 95, 100];
     
